@@ -14,9 +14,9 @@ if [[ $? == "1" ]]; then
 	echo "Compile Error"
 
 else	
-	case_id=0
+	case_id=1
 
-	while $(cp ./testcase/${case_id}.{in,out} ./tmp/ &>/dev/null) ; do
+	while $(cp ./testdata/${case_id}.{in,out} ./tmp/ &>/dev/null) ; do
 
 		python3 $1 < ./tmp/${case_id}.in > ./tmp/${case_id}.myout 
                 if [[ $? != "0" ]]  ; then
